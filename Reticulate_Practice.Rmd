@@ -1,0 +1,81 @@
+---    
+title: "Reticulate Practice"
+author: "Chrysostomos Tornari"
+date: "2023-01-08"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+# Practicing manipulating data in Python using Reticulate
+
+I have previously used Python where absoluetly necessary for scraping pdf data. It has been a few years since I was using Python during the Covid-19 pandemic and shortly after. Now I want to check my current system's setup and get Python working again as I anticipate some problems.
+
+I have Python installed on this machine but this is all I know for now. Let's see what works...
+
+```{python}
+import numpy as np
+```
+
+Importing numpy worked without issue. I got my Python version which is currently 3.9.4. I didn't have to do a pip (or other) install. Let's move on.
+
+```{python}
+a = np.array([1,2,3])
+print(a)
+```
+
+Initializing and printing an array worked OK. I'm working through [a tutorial](https://www.youtube.com/watch?v=QUT1VHiLmmI) on numpy and will try a few more functions to check that that things are working OK.
+
+```{python}
+a.ndim
+a.shape
+a.dtype
+
+# Get size in bytes
+a.itemsize
+a.size
+a.nbytes
+```
+
+Here are some useful commands:
+
+```{python}
+# Get a specific row
+# a[0, :]
+# Or column
+# a[:, 1]
+# Note that python is zero-indexed
+# Also note that the ":" really represents "FIRST:LAST" so you can get ranges
+# You can also do [startindex;endindex;stepsize]
+# You can assign like this
+# a[1,5] = 5
+```
+
+Initializing different types of arrays
+
+```{python}
+np.zeros((2,3))
+np.ones((4,2,2))
+# shape then value:
+np.full((2,2), 99)
+np.identity(5)
+```
+
+Remember that b = a in python just points b to a without really making a copy. To actually make a copy you should assign by "b = a.copy()"
+
+Other useful functions are thinks like:
+
+n.pmin()
+np.max()
+you can use the axis argument in these commands to summarise certain rows or columns.
+
+
+ 
+ 
